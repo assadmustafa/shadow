@@ -1,5 +1,5 @@
 import Store from "../../../models/store";
-import connectMongoDB from "../../../libs/mongodb"
+import connectMongoDB from "../../../lib/mongodb"
 import { NextResponse } from "next/server";
 
 export async function PUT(request, {params}) {

@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import connectMongoDB from "../../libs/mongodb";
+import connectMongoDB from "../../lib/mongodb";
 import Store from "../../models/store";
 
 export async function POST(request) {
@@ -14,8 +14,6 @@ export async function GET() {
     const stores = await Store.find();
     return NextResponse.json({stores});
 }
-
-
 
 export async function DELETE(request) {
     const id = request.nextUrl.searchParams.get("id");
