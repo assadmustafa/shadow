@@ -9,6 +9,11 @@ export default async function Page() {
     return redirect("/api/auth/signin?callbackUrl=/");
   }
 
-  return <>
-  </>;
+  return (
+    <>
+      <div className="flex items-center justify-center min-h-full flex-1 flex-col px-6 py-12 lg:px-8">
+        <p className="font-bold text-2xl cursor-default">{session?.user.name}</p>
+      </div>
+    </>
+  );
 }
