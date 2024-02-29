@@ -9,5 +9,6 @@ export default async function Page() {
     return redirect("/api/auth/signin?callbackUrl=/");
   }
 
-  return <></>;
+  return <>
+  </>;
 }

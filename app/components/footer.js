@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="flex w-full bg-blue-600 clear-both">
+    <footer className=" bg-blue-600">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
@@ -24,8 +24,8 @@ const Footer = () => {
               </h2>
               <ul className="text-blue-300 font-medium">
                 <li className="mb-4">
-                  <a href="https://flowbite.com/" className="hover:text-white  transition duration-500">
-                    Flowbite
+                  <a href="/" className="hover:text-white  transition duration-500">
+                    BMW
                   </a>
                 </li>
                 <li>
