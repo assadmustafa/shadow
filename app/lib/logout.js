@@ -21,7 +21,7 @@ export default function Logout() {
         </form>
       ) : (
         <a
-          href="/auth/login"
+          href="/pages/login"
           className="flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-black hover:text-white transition duration-300 md:flex-none md:justify-start md:p-2 md:px-3"
         >
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">

@@ -48,7 +48,7 @@ const Register = () => {
         toast.success("Account has been created successfully!", { theme: "colored" });
         await delay(6000);
         router.refresh();
-        router.push("/auth/login");
+        router.push("/pages/login");
       }
     } catch (error) {
       console.error("An error occurred during registration:", error);
@@ -163,7 +163,7 @@ const Register = () => {
             <p className="mt-10 text-center text-sm text-gray-500">
               Already have an account?{" "}
               <a
-                href="/auth/login"
+                href="/pages/login"
                 className="font-semibold leading-6 text-blue-600 hover:text-blue-500"
               >
                 Login

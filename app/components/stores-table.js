@@ -120,7 +120,7 @@ export default async function StoresTable() {
                 Name
               </th>
               <th scope="col" className="px-6 py-3">
-                Position
+                Location
               </th>
               <th scope="col" className="px-6 py-3">
                 Status
@@ -132,7 +132,7 @@ export default async function StoresTable() {
           </thead>
           <tbody>
             {stores.map((s) => (
-              <tr key={s._id} className="bg-white  hover:bg-gray-50 ">
+              <tr key={s._id} className="bg-white border-b hover:bg-gray-50 ">
                 <td className="w-4 p-4">
                   <div className="flex items-center"></div>
                 </td>

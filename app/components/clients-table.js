@@ -97,18 +97,22 @@ export default function ClientsTable() {
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 ">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50  ">
             <tr>
-              <th scope="col" className="p-4">
-                <div className="flex items-center"></div>
-              </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-9 py-3">
                 Name
               </th>
               <th scope="col" className="px-6 py-3">
-                Position
+                Adres
               </th>
               <th scope="col" className="px-6 py-3">
-                Status
+                Postcode
               </th>
+              <th scope="col" className="px-6 py-3">
+                City
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Client Number
+              </th>
+
               <th scope="col" className="px-6 py-3">
                 Action
               </th>
@@ -116,9 +120,6 @@ export default function ClientsTable() {
           </thead>
           <tbody>
             <tr className="bg-white border-b  hover:bg-gray-50 ">
-              <td className="w-4 p-4">
-                <div className="flex items-center"></div>
-              </td>
               <th
                 scope="row"
                 className="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
@@ -129,54 +130,27 @@ export default function ClientsTable() {
                   alt="Jese image"
                 />
                 <div className="ps-3">
-                  <div className="text-base font-semibold">Thomas Lean</div>
+                  <div className="text-base font-semibold">Assad Mustafa</div>
                   <div className="font-normal text-gray-500">
-                    thomes@flowbite.com
+                    mr.assad@live.fr
                   </div>
                 </div>
               </th>
-              <td className="px-6 py-4">UI/UX Engineer</td>
               <td className="px-6 py-4">
-                <div className="flex items-center">
-                  <div className="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div>{" "}
-                  Online
+                <div className="font-normal text-gray-500">
+                  <p className="float-left">Zuil</p>{" "}
+                  <p className="float-left pl-1">32</p>
                 </div>
               </td>
+
+              <td className="px-6 py-4">6641 MG</td>
+              <td className="px-6 py-4">Beuningen</td>
+              <td className="px-6 py-4">1168379</td>
               <td className="px-6 py-4">
-                <a href="#" className="font-medium text-blue-600  hover:underline">
-                  <PencilSquareIcon width={20} color="blue" />
-                </a>
-              </td>
-            </tr>
-            <tr className="bg-white  hover:bg-gray-50 ">
-              <td className="w-4 p-4">
-                <div className="flex items-center"></div>
-              </td>
-              <th
-                scope="row"
-                className="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
-              >
-                <img
-                  className="w-10 h-10 rounded-full"
-                  src="https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/no-profile-picture-icon.png"
-                  alt="Jese image"
-                />
-                <div className="ps-3">
-                  <div className="text-base font-semibold">Leslie Livingston</div>
-                  <div className="font-normal text-gray-500">
-                    leslie@flowbite.com
-                  </div>
-                </div>
-              </th>
-              <td className="px-6 py-4">SEO Specialist</td>
-              <td className="px-6 py-4">
-                <div className="flex items-center">
-                  <div className="h-2.5 w-2.5 rounded-full bg-red-500 me-2"></div>{" "}
-                  Offline
-                </div>
-              </td>
-              <td className="px-6 py-4">
-                <a href="#" className="font-medium text-blue-600  hover:underline">
+                <a
+                  href="#"
+                  className="font-medium text-blue-600  hover:underline"
+                >
                   <PencilSquareIcon width={20} color="blue" />
                 </a>
               </td>

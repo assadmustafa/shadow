@@ -45,7 +45,7 @@ export const options = {
     }),
   ],
   pages: {
-    signIn: "/auth/login",
+    signIn: "/pages/login",
   },
   callbacks: {
     async jwt({ token, user }) {

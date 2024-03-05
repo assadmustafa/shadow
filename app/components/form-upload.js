@@ -39,7 +39,10 @@ const UploadForm = () => {
     files.forEach((file) => {
       formData.append("files", file);
     });
+    
     const response = await uploadPhoto(formData);
+
+    
 
     if (response?.errMsg)
       toast.success(`Error: ${response?.errMsg}`, { theme: "colored" });
