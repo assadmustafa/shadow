@@ -3,7 +3,9 @@ import Register from '../../lib/register'
 
 const page = () => {
   return (
-    <Register/>
+    <div className='h-screen'>
+      <Register/>
+    </div>
   )
 }
 

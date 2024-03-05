@@ -49,6 +49,7 @@ export default function Page() {
           <AddButton collection={"cars"} element={"car"} />
           <h1 className="text-2xl font-bold text-center mt-5 mb-10">Cars</h1>
           <div className="grid grid-cols-none md:grid-cols-4 gap-4 scroll-smooth">
+            
             <motion.div
               initial={{ opacity: 0, y: "-200%" }}
               animate={{ opacity: 1, y: 0 }}
@@ -57,7 +58,7 @@ export default function Page() {
               <Car />
             </motion.div>
             <motion.div
-            transition={{delay:0.2}}
+              transition={{ delay: 0.2 }}
               initial={{ opacity: 0, y: "-200%" }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, x: "100%" }}
@@ -65,7 +66,7 @@ export default function Page() {
               <Car />
             </motion.div>
             <motion.div
-            transition={{delay:0.4}}
+              transition={{ delay: 0.4 }}
               initial={{ opacity: 0, y: "-200%" }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, x: "100%" }}

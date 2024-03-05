@@ -62,10 +62,10 @@ const Register = () => {
   if (isLoading) {
     return (
       <>
-        <div className="flex items-center justify-center h-screen">
+        <div className="flex items-center justify-center h-full">
           <div className="mx-auto text-center">
             <ToastContainer theme="colored" />
-            <Box sx={{ display: "flex" }}>
+            <Box sx={{ display: "flex" }} >
               <CircularProgress size={"100px"} />
             </Box>
           </div>
@@ -75,7 +75,7 @@ const Register = () => {
   }
   return (
     <>
-      <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+      <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-20 lg:px-8">
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <>
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">

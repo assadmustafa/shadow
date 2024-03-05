@@ -7,7 +7,9 @@ import { SessionProvider } from "next-auth/react";
 const page = () => {
   return (
     <SessionProvider>
-      <Login />
+      <div className="h-screen">
+        <Login />
+      </div>
     </SessionProvider>
   );
 };

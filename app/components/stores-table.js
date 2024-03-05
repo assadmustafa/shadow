@@ -81,7 +81,7 @@ export default async function StoresTable() {
               </div>
             </div>
           </div>
-          <label for="table-search" className="sr-only">
+          <label htmlFor="table-search" className="sr-only">
             Search
           </label>
           <div className="relative">
