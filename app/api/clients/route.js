@@ -3,9 +3,9 @@ import connectMongoDB from "../../lib/mongodb";
 import Client from "../../models/client";
 
 export async function POST(request) {
-    const {name, address, postcode, city,clientNumber,public_id,secure_url} = await request.json();
+    const {name,address,postcode, city,clientNumber,avatarUrl} = await request.json();
     await connectMongoDB();
-    await Client.create({name,address, postcode, city,clientNumber,public_id,secure_url});
+    await Client.create({name,address,postcode, city,clientNumber,avatarUrl});
     return NextResponse.json({message:"Client Added"},{status:201});
 }
 

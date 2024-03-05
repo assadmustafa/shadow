@@ -7,7 +7,7 @@ import AddButton from "@/app/components/btn-add";
 export default async function Page() {
   const session = await getServerSession(options);
   if (!session) {
-    return redirect("/api/auth/signin?callbackUrl=/");
+    return redirect("/auth/signin?callbackUrl=/");
   }
     return (
       <>

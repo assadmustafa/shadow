@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Logout from "../lib/logout";
 import { SessionProvider } from "next-auth/react";
 
-const Navbar = () => {
+const Navbar = (isOpen) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {

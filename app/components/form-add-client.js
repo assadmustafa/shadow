@@ -3,6 +3,8 @@
 import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { PlusCircleIcon } from "@heroicons/react/24/outline";
+import uploadPhoto from "@/app/dashboard/clients/add-client/upload-actions.js";
+import axios from 'axios';
 
 export default function AddClientForm() {
   const [firstName, setFirstName] = useState("");
@@ -13,55 +15,70 @@ export default function AddClientForm() {
   const [city, setCity] = useState("");
   const [clientNumber, setClientNumber] = useState("");
   const formRef = useRef();
-  const [file, setFile] = useState([]);
   const router = useRouter();
-  const [public_id, setPublicId] = useState("");
-  const [secure_url, setSecureUrl] = useState("");
 
-  async function handleInputFile(e) {
-    const file = e.target.file;
-    const newFile = [...file].filter((file) => {
-      if (file.type.startsWith("image/")) {
-        return file;
-      }
-    });
-    setFile((prev) => [...newFile, ...prev]);
-    formRef.current.reset();
-  }
+  const handleFileChange = () => {
+    
+  };
 
   async function handleUpload() {
-    const formData = new FormData();
-    formData.append("file", file);
-    const response = await uploadPhoto(formData);
-    setPublicId(response?.public_id);
-    setSecureUrl(response?.secure_url);
-    setFile([]);
-    formRef.current.reset();
+    
   }
+
+  
 
   const handleSubmit = async () => {
     if (
-      !firstName ||
-      !lastName ||
-      !street ||
-      !houseNumber ||
-      !postcode ||
-      !city ||
-      !clientNumber
+      !firstName
     ) {
-      alert("Some fields are required required.");
+      alert("First name required.");
+      return;
+    }
+
+    if (
+      !lastName
+    ) {
+      alert("Last name required.");
+      return;
+    }
+
+    if (
+      !street
+    ) {
+      alert("Street name required.");
+      return;
+    }
+
+    if (
+      !houseNumber
+    ) {
+      alert("House number required.");
+      return;
+    }
+
+    if (
+      !postcode
+    ) {
+      alert("Postcode required.");
+      return;
+    }
+
+    if (
+      !city
+    ) {
+      alert("City required.");
       return;
     }
 
     try {
-      // upload profile to cloudinary
-      handleUpload();
       // generate client number
       const randomNum = Math.floor(
         Math.random() * (999999 - 100000 + 1) + 100000
       );
+
       setClientNumber(randomNum);
-      const response = await fetch("http://localhost:3000/api/stores", {
+
+      const mongoResponse = await fetch("http://localhost:3000/api/clients", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -72,12 +89,12 @@ export default function AddClientForm() {
           postcode: postcode,
           city: city,
           clientNumber: clientNumber,
-          public_id: public_id, // TODO
-          secure_url: secure_url, // TODO
         }),
       });
 
-      if (response.ok) {
+      console.log("Mongo Response:" + mongoResponse.data);
+      
+      if (mongoResponse.ok) {
         router.push("/dashboard/clients");
         router.refresh();
       } else {
@@ -160,7 +177,7 @@ export default function AddClientForm() {
             className="block w-full text-sm  border  rounded-lg cursor-pointer  text-white focus:outline-none bg-blue-500 border-gray-600 placeholder-white"
             id="file_input"
             type="file"
-            onChange={handleInputFile}
+            onChange={handleFileChange}
             accept="image/*"
           />
         </div>
@@ -169,7 +186,7 @@ export default function AddClientForm() {
           className="bg-green-600 hover:bg-green-500 transition duration-300 flex w-fit h-[50px] mt-4 items-center justify-center gap-2 rounded-md p-3 text-md text-white font-bold  md:flex-none md:justify-start md:p-2 md:px-3 float-right"
         >
           <PlusCircleIcon width={30} color="white" />
-          Add Store
+          Add Client
         </button>
       </div>
     </form>

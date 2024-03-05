@@ -65,7 +65,7 @@ export default function ClientsTable() {
               </div>
             </div>
           </div>
-          <label for="table-search" className="sr-only">
+          <label htmlFor="table-search" className="sr-only">
             Search
           </label>
           <div className="relative">

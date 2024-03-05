@@ -15,7 +15,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html className=" bg-white" lang="en">
+    <html className="flex flex-col h-screen justify-between bg-white" lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link
@@ -31,10 +31,15 @@ export default function RootLayout({ children }) {
           sizes="<generated>"
         />
       </head>
-      <body className={`${inter.className} w-full h-screen`}>
+      <body className={`${inter.className} w-full h-screen `}>
         <Navbar />
+        <div className="h-[1900px] sm:h-screen mb-auto">
         {children}
+        </div>
+        <div className="">
         <Footer />
+        </div>
+        
       </body>
     </html>
   );

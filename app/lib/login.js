@@ -31,7 +31,7 @@ export default function Login() {
         theme: "colored",
       });
       
-      await delay(6000);
+      await delay(4000);
       router.push("/dashboard");
       await delay(1000);
       window.location.reload();

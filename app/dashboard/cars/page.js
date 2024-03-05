@@ -5,11 +5,10 @@ import AddButton from "@/app/components/btn-add";
 import { useState, useEffect } from "react";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
-import FadeIn from "react-fade-in";
+import { motion } from "framer-motion";
 
 export default function Page() {
   const [isLoading, setIsLoading] = useState(true);
-
   const delay = (delayInms) => {
     return new Promise((resolve) => setTimeout(resolve, delayInms));
   };
@@ -50,30 +49,29 @@ export default function Page() {
           <AddButton collection={"cars"} element={"car"} />
           <h1 className="text-2xl font-bold text-center mt-5 mb-10">Cars</h1>
           <div className="grid grid-cols-none md:grid-cols-4 gap-4 scroll-smooth">
-            <FadeIn>
+            <motion.div
+              initial={{ opacity: 0, y: "-200%" }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, x: "100%" }}
+            >
               <Car />
-            </FadeIn>
-            <FadeIn delay={200}>
+            </motion.div>
+            <motion.div
+            transition={{delay:0.2}}
+              initial={{ opacity: 0, y: "-200%" }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, x: "100%" }}
+            >
               <Car />
-            </FadeIn>
-            <FadeIn delay={400}>
+            </motion.div>
+            <motion.div
+            transition={{delay:0.4}}
+              initial={{ opacity: 0, y: "-200%" }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, x: "100%" }}
+            >
               <Car />
-            </FadeIn>
-            <FadeIn delay={600}>
-              <Car />
-            </FadeIn>
-            <FadeIn delay={800}>
-              <Car />
-            </FadeIn>
-            <FadeIn delay={1000}>
-              <Car />
-            </FadeIn>
-            <FadeIn delay={1200}>
-              <Car />
-            </FadeIn>
-            <FadeIn delay={1400}>
-              <Car />
-            </FadeIn>
+            </motion.div>
           </div>
         </div>
       )}

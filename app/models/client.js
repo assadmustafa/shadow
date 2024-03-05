@@ -1,20 +1,10 @@
-import mongoose, {Schema} from 'mongoose';
+import { Schema, model, models } from "mongoose";
 
-const clientSchema = new Schema(
-    {
-        name: String,
-        address: String,
-        postcode: String,
-        city: String,
-        clientNumber: String,
-        public_id: String,// for image cloudinary
-        secure_url: String,//for image cloudinary
-    },
-    {
-        timestamps: true,
-    }
-);
+const clientSchema = new Schema({
+    public_id: String,
+    secure_url: String,
+}, { timestamps:true})
 
-const Client = mongoose.models.Client || mongoose.model('Client', clientSchema);
+const Photo = models.clients || model("clients", clientSchema);
 
-export default Client;
+export default Photo;

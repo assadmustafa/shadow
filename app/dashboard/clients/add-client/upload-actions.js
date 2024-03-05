@@ -7,7 +7,6 @@ import os from "os";
 import cloudinary from "cloudinary";
 import { revalidatePath } from "next/cache";
 import Photo from "@/app/models/photo";
-import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 cloudinary.config({
